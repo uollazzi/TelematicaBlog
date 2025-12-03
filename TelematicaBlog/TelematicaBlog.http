@@ -1,0 +1,6 @@
+@TelematicaBlog_HostAddress = http://localhost:5207
+
+GET {{TelematicaBlog_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
