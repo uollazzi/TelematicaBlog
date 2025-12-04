@@ -8,6 +8,8 @@ namespace TelematicaBlog.DAL.Entities;
 
 public class Categoria
 {
+    [Key]
+    [DatabaseGenerated(DatabaseGeneratedOption.None)]
     public int Id { get; set; }
 
     [Required]

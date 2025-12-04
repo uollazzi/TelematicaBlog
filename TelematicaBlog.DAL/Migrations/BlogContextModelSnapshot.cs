@@ -56,10 +56,7 @@ namespace TelematicaBlog.DAL.Migrations
             modelBuilder.Entity("TelematicaBlog.DAL.Entities.Categoria", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Nome")
                         .IsRequired()

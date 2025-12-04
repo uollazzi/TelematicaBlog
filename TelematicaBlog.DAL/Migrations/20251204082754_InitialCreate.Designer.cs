@@ -11,7 +11,7 @@ using TelematicaBlog.DAL;
 namespace TelematicaBlog.DAL.Migrations
 {
     [DbContext(typeof(BlogContext))]
-    [Migration("20251203114433_InitialCreate")]
+    [Migration("20251204082754_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -59,10 +59,7 @@ namespace TelematicaBlog.DAL.Migrations
             modelBuilder.Entity("TelematicaBlog.DAL.Entities.Categoria", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Nome")
                         .IsRequired()
