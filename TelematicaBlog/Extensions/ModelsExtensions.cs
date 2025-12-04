@@ -12,4 +12,13 @@ public static class ModelsExtensions
             Nome = item.Nome 
         };
     }
+
+    public static UtenteModel ToUtenteModel(this Utente item)
+    {
+        return new UtenteModel()
+        {
+            Id = item.Id,
+            Nome = item.Nome
+        };
+    }
 }
