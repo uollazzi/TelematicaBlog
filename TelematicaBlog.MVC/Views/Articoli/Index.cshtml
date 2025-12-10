@@ -1,0 +1,9 @@
+﻿@model IEnumerable<ArticoloModel>
+
+<ul class="list-group">
+    @foreach(var a in Model)
+    {
+        <li class="list-group-item">@a.Titolo</li>
+    }
+</ul>
+
