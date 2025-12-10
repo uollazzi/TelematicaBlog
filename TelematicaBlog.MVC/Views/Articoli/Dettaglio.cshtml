@@ -1,0 +1,12 @@
+﻿@model ArticoloModel
+
+<h1>@Model.Titolo.ToUpper()</h1>
+
+@if (Model.Categoria.Id == 1)
+{
+    <h2>@Model.Categoria.Nome</h2>
+}
+<p class="text-muted">scritto da @Model.Auotore</p>
+
+<p>@Model.Testo</p>
+
