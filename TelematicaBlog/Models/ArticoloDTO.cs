@@ -1,5 +1,7 @@
 ﻿namespace TelematicaBlog.Models;
 
+// POCO -> Plain Old CLR Object
+
 public class ArticoloDTO
 {
     public string? Titolo { get; set; }
