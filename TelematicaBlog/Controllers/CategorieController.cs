@@ -11,23 +11,19 @@ namespace TelematicaBlog.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
-public class CategorieController : ControllerBase
-{    
-    private readonly BlogContext _dc;
-
-    public CategorieController(BlogContext dc)
-    {
-        _dc = dc;
-    }
-
+public class CategorieController(BlogContext dc) : ControllerBaseConDataContext(dc)
+{
     [HttpGet] // => GET /api/categorie/
     public async Task<ActionResult<IEnumerable<CategoriaModel>>> GetAll()
     {
-        var data = await _dc.Categorie
-            .Select(x => x.ToCategoriaModel())
-            .ToListAsync();
+        var datiDelDB = await _dc.Categorie.ToListAsync();
+        var datiPerIlClient = datiDelDB.Select(x => x.ToCategoriaModel());
 
-        return Ok(data);
+        //var data = (await _dc.Categorie
+        //    .ToListAsync())
+        //    .Select(x => x.ToCategoriaModel());
+
+        return Ok(datiPerIlClient);
     }
 
     [HttpGet("{id}")] // => GET /api/categorie/2

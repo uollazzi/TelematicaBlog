@@ -21,4 +21,16 @@ public static class ModelsExtensions
             Nome = item.Nome
         };
     }
+
+    public static ArticoloModel ToArticoloModel(this Articolo item)
+    {
+        return new ArticoloModel()
+        {
+            Id = item.Id,
+            Titolo = item.Titolo,
+            Testo = item.Testo,
+            Categoria = item.Categoria?.ToCategoriaModel(),
+            Auotore = item.Autore?.Nome
+        };
+    }
 }
