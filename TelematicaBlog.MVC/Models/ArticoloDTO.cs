@@ -1,9 +1,12 @@
-﻿namespace TelematicaBlog.MVC.Models;
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace TelematicaBlog.MVC.Models;
 
 // POCO -> Plain Old CLR Object
 
 public class ArticoloDTO
 {
+    [Required]
     public string? Titolo { get; set; }
 
     public string? Testo { get; set; }

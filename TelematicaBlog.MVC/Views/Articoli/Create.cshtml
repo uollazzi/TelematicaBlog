@@ -1,0 +1,22 @@
+﻿@model ArticoloDTO
+
+<h3>Form nuovo articolo</h3>
+
+<form method="post" asp-action="Create">
+    <div class="mb-3">
+        <label asp-for="Titolo" class="form-label">Titolo</label>
+        <input asp-for="Titolo" type="text" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Testo" class="form-label">Testo</label>
+        <textarea asp-for="Testo" class="form-control" rows="5">
+        </textarea>
+    </div>
+    <div class="mb-3">
+        <label asp-for="CategoriaId" class="form-label">Categoria ID</label>
+        <select asp-items="@((IEnumerable<SelectListItem>)ViewData["categorie"]!)" asp-for="CategoriaId" type="number" class="form-select">
+        </select>              
+    </div>
+
+   <button type="submit" class="btn btn-primary">Salva</button>
+</form>
