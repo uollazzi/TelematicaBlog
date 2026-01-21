@@ -1,5 +1,7 @@
 <Solution>
   <Project Path="TelematicaBlog.DAL/TelematicaBlog.DAL.csproj" />
-  <Project Path="TelematicaBlog.MVC/TelematicaBlog.MVC.csproj" Id="cee59b66-4a41-4b35-bf75-ba684ac2da47" />
+  <Project Path="TelematicaBlog.MVC/TelematicaBlog.MVC.csproj"
+    Id="cee59b66-4a41-4b35-bf75-ba684ac2da47" />
   <Project Path="TelematicaBlog/TelematicaBlog.csproj" />
+
 </Solution>
