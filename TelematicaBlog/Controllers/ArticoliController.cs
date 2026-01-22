@@ -13,7 +13,7 @@ namespace TelematicaBlog.Controllers
     public class ArticoliController(BlogContext dc) : ControllerBaseConDataContext(dc)
     {
         [HttpGet] // => GET /api/articoli/
-        public async Task<ActionResult<IEnumerable<CategoriaModel>>> GetAll()
+        public async Task<ActionResult<IEnumerable<ArticoloModel>>> GetAll()
         {
             var datiDelDB = await _dc.Articoli
                 .Include(a => a.Categoria)
@@ -23,6 +23,22 @@ namespace TelematicaBlog.Controllers
             var datiPerIlClient = datiDelDB.Select(x => x.ToArticoloModel());
            
             return Ok(datiPerIlClient);
+        }
+
+        [HttpGet("{id}")] // => GET /api/articoli/2
+        public async Task<ActionResult<ArticoloModel>> GetById(int id)
+        {
+            var art = await _dc.Articoli
+                .Include(a => a.Categoria)
+                .Include(a => a.Autore)
+                .SingleOrDefaultAsync(x => x.Id == id);
+
+            if (art == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(art.ToArticoloModel());
         }
 
         [HttpPost] // => POST /api/articoli/

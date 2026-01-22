@@ -10,5 +10,5 @@ public class ArticoloModel
 
     public CategoriaModel? Categoria { get; set; }
 
-    public string? Auotore { get; set; } // solo il nome
+    public string? Autore { get; set; } // solo il nome
 }

@@ -30,7 +30,7 @@ public static class ModelsExtensions
             Titolo = item.Titolo,
             Testo = item.Testo,
             Categoria = item.Categoria?.ToCategoriaModel(),
-            Auotore = item.Autore?.Nome
+            Autore = item.Autore?.Nome
         };
     }
 }
